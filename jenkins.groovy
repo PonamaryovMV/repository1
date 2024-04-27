@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     echo "СБОРКА ОБРАЗА"
-                    sh "docker build -t myngix:0.0.2 ."
+                    sh "docker build -t myngix:0.0.3 ."
                 }
             }
         }
@@ -38,14 +38,14 @@ pipeline {
                 script {
                     echo "ПУШ В НЕКСУС"
                     sh "docker login -u admin -p 123  http://192.168.1.144:8123/repository/docker/"
-                    sh "docker tag myngix:0.0.2 192.168.1.144:8123/new_nginx:0.0.2" 
-                    sh "docker push 192.168.1.144:8123/new_nginx:0.0.2"
+                    sh "docker tag myngix:0.0.3 192.168.1.144:8123/new_nginx:0.0.3" 
+                    sh "docker push 192.168.1.144:8123/new_nginx:0.0.3"
                 }
             }
         }
         stage('DELETE LOCAL IMAGE') {
             steps {
-                sh "docker image rm 192.168.1.144:8123/new_nginx:0.0.2"
+                sh "docker image rm 192.168.1.144:8123/new_nginx:0.0.3"
             }
         }
         stage('DELETE WORKSPACE') {
