@@ -14,11 +14,10 @@ pipeline {
                     url: 'https://github.com/PonamaryovMV/repository1.git'
                 sh "pwd"
                 sh "ls -la"
-                sh 'echo VIPOLNENO'
-                
+                sh 'echo VIPOLNENO'                
             }
-        }
-        stage('Example') {
+        }        
+        stage('Number Building') {
             steps {
                 script {
                     def buildNumber = env.BUILD_NUMBER
