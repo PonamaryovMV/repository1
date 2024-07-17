@@ -69,7 +69,7 @@ pipeline {
         // }
         stage('DELETE LOCAL IMAGE') {
             steps {
-                sh "docker image rm 192.168.254.128:8123/new_nginx:0.0.3"
+                sh "docker image rm mynginx:0.0.3"
             }
         }
         stage('DELETE WORKSPACE') {
