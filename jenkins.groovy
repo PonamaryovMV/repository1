@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     echo "СБОРКА ОБРАЗА"
-                    sh "docker build -t myngix:0.0.3 ."
+                    sh "docker build -t mynginx:0.0.3 ."
                 }
             }
         }
